@@ -37,7 +37,7 @@ habitos(){
  return `<h2>Mis hábitos</h2>`+(S.habits.length?S.habits.map(h=>`<div class="card habit">
  <div class="ic">${h.icon}</div><div class="info"><b>${esc(h.name)}</b><span class="sub">Meta: ${h.target} ${esc(h.unit)} al día · Racha: ${streak(h)} días</span></div>
  <button class="del" data-act="del" data-id="${h.id}" aria-label="Eliminar ${esc(h.name)}">🗑</button></div>`).join('')
- :'<div class="empty">No tienes hábitos todavía.</div>')+`<button class="btn" data-go="agregar">Agregar hábito</button>`},
+ :'<div class="empty">No tienes hábitos todavía. Crea el primero en la pestaña Agregar.</div>')},
 progreso(){
  const days=[...Array(7)].map((_,i)=>back(6-i)),ps=days.map(d=>pct(dk(d))),avg=Math.round(ps.reduce((a,b)=>a+b,0)/7);
  const L=['D','L','M','M','J','V','S'];
