@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#12263A">
+<title>HabiUp · Tus hábitos diarios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main id="app">
+  <section id="login" class="screen">
+    <div class="brand">Habi<span>Up</span></div>
+    <h1>Un hábito a la vez, un día más arriba.</h1>
+    <form id="f-login" class="card">
+      <label>Nombre<input name="name" required maxlength="30" autocomplete="name" placeholder="Tu nombre"></label>
+      <label>Correo<input name="email" type="email" required autocomplete="email" placeholder="tu@correo.com"></label>
+      <button class="btn" type="submit">Iniciar sesión</button>
+      <p class="hint">Tus datos se guardan solo en este dispositivo.</p>
+    </form>
+  </section>
+
+  <section id="inicio" class="screen" hidden></section>
+  <section id="habitos" class="screen" hidden></section>
+
+  <section id="agregar" class="screen" hidden>
+    <h2>Agregar hábito</h2>
+    <form id="f-add" class="card">
+      <label>Nombre<input name="name" required maxlength="30" placeholder="Ej. Meditar"></label>
+      <label>Ícono
+        <select name="icon">
+          <option>💧</option><option>📖</option><option>🏃</option><option>🌙</option>
+          <option>🧘</option><option>🍎</option><option>✍️</option><option>🎸</option>
+        </select>
+      </label>
+      <div class="row">
+        <label>Meta diaria<input name="target" type="number" min="1" max="999" value="1" required></label>
+        <label>Unidad
+          <select name="unit"><option>veces</option><option>vasos</option><option>minutos</option><option>páginas</option></select>
+        </label>
+      </div>
+      <button class="btn" type="submit">Guardar hábito</button>
+    </form>
+  </section>
+
+  <section id="progreso" class="screen" hidden></section>
+  <section id="perfil" class="screen" hidden></section>
+</main>
+
+<nav id="tabs" hidden>
+  <button data-go="inicio"><i>🏠</i>Inicio</button>
+  <button data-go="habitos"><i>✅</i>Mis hábitos</button>
+  <button data-go="agregar"><i>➕</i>Agregar</button>
+  <button data-go="progreso"><i>📈</i>Progreso</button>
+  <button data-go="perfil"><i>👤</i>Perfil</button>
+</nav>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
