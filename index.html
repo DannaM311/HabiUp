@@ -4,22 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#12263A">
-<title>HabiUp · Tus hábitos diarios</title>
+<title>HabitUp · Tus hábitos diarios</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main id="app">
-  <section id="login" class="screen">
-    <div class="brand">Habi<span>Up</span></div>
-    <h1>Un hábito a la vez, un día más arriba.</h1>
+  <section id="bienvenida" class="screen">
+    <div class="brand">Habit<span>Up</span></div>
+    <p class="sub">Un hábito a la vez, un día más arriba.</p>
+    <h1>Comienza a construir tus hábitos</h1>
+    <button class="btn" data-go="registro">Crear cuenta</button>
+    <button class="btn ghost" data-go="login">Iniciar sesión</button>
+  </section>
+
+  <section id="login" class="screen" hidden>
+    <button class="back" data-go="bienvenida" aria-label="Volver">←</button>
+    <div class="brand">Habit<span>Up</span></div>
+    <p class="sub">Un hábito a la vez, un día más arriba.</p>
     <form id="f-login" class="card">
-      <label>Nombre<input name="name" required maxlength="30" autocomplete="name" placeholder="Tu nombre"></label>
-      <label>Correo<input name="email" type="email" required autocomplete="email" placeholder="tu@correo.com"></label>
+      <label>Nombre / Correo electrónico<input name="id" required autocomplete="username"></label>
+      <label>Contraseña<input name="pw" type="password" required autocomplete="current-password"></label>
+      <p class="err" id="e-login" role="alert"></p>
+      <button class="link" type="button" data-go="recuperar">¿Olvidaste tu contraseña?</button>
       <button class="btn" type="submit">Iniciar sesión</button>
-      <p class="hint">Tus datos se guardan solo en este dispositivo.</p>
     </form>
+    <p class="hint">Registra tus hábitos y sigue tu progreso.</p>
+  </section>
+
+  <section id="registro" class="screen" hidden>
+    <button class="back" data-go="bienvenida" aria-label="Volver">←</button>
+    <div class="brand">Habit<span>Up</span></div>
+    <h2>Registrarse</h2>
+    <form id="f-reg" class="card">
+      <label>Nombre completo<input name="name" required maxlength="40" autocomplete="name"></label>
+      <label>Edad<input name="age" type="number" min="5" max="110" required></label>
+      <label>Correo electrónico<input name="email" type="email" required autocomplete="email"></label>
+      <label>Contraseña<input name="pw" type="password" minlength="6" required autocomplete="new-password"></label>
+      <label>Confirmar contraseña<input name="pw2" type="password" minlength="6" required autocomplete="new-password"></label>
+      <p class="err" id="e-reg" role="alert"></p>
+      <button class="btn" type="submit">Registrarme</button>
+    </form>
+  </section>
+
+  <section id="recuperar" class="screen" hidden>
+    <button class="back" data-go="login" aria-label="Volver">←</button>
+    <h2>Recuperar contraseña</h2>
+    <p class="sub">Ingresa tu correo electrónico para restablecer tu contraseña.</p>
+    <form id="f-rec" class="card">
+      <label>Correo electrónico<input name="email" type="email" required></label>
+      <button class="btn" type="submit">Enviar enlace</button>
+    </form>
+    <div id="rec-ok" class="card okcard" hidden><div class="check">✓</div><p>Te enviaremos un enlace para restablecer tu contraseña.</p></div>
+  </section>
+
+  <section id="confirmado" class="screen okscreen" hidden>
+    <div class="check big">✓</div>
+    <h2>¡Registro exitoso!</h2>
+    <p class="sub">Tu cuenta fue creada. Ya puedes iniciar sesión y empezar con tus hábitos.</p>
+    <button class="btn" data-go="login">Iniciar sesión</button>
   </section>
 
   <section id="inicio" class="screen" hidden></section>

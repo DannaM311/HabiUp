@@ -1,11 +1,11 @@
-# HabiUp
+# HabitUp
 
 Aplicación web para registrar hábitos diarios (tomar agua, leer, hacer ejercicio, dormir temprano).
 
-**Pantallas:** inicio de sesión, inicio, mis hábitos, agregar hábito, progreso y perfil.
+**Pantallas:** bienvenida, iniciar sesión, registrarse, recuperar contraseña, registro exitoso, inicio, mis hábitos, agregar hábito, progreso y perfil.
 
 - HTML, CSS y JavaScript puros, sin dependencias ni paso de compilación.
-- Los datos se guardan en el `localStorage` del navegador.
+- Los datos (cuenta, hábitos y progreso) se guardan solo en el `localStorage` del navegador; es un prototipo sin servidor.
 
 ## Desplegar en GitHub Pages
 1. Crea un repositorio y sube `index.html`, `styles.css`, `app.js` y `README.md` a la raíz.
