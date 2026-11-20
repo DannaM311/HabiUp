@@ -83,8 +83,8 @@ document.addEventListener('click',e=>{
  }
 });
 document.addEventListener('submit',async e=>{
- e.preventDefault();const f=new FormData(e.target),id=e.target.id;
- if(id==='f-login'){const a=S.account,q=f.get('id').trim().toLowerCase();
+ e.preventDefault();const f=new FormData(e.target),id=e.target.getAttribute('id');
+ if(id==='f-login'){const a=S.account,q=f.get('user').trim().toLowerCase();
   if(!a)return err('e-login','No encontramos una cuenta. Crea una primero.');
   const ok=(a.email.toLowerCase()===q||a.name.toLowerCase()===q)&&a.hash===await hash(f.get('pw'));
   if(!ok)return err('e-login','Nombre o correo, o contraseña, incorrectos.');

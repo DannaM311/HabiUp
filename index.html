@@ -7,7 +7,7 @@
 <title>HabitUp · Tus hábitos diarios</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <main id="app">
@@ -24,7 +24,7 @@
     <div class="brand">Habit<span>Up</span></div>
     <p class="sub">Un hábito a la vez, un día más arriba.</p>
     <form id="f-login" class="card">
-      <label>Nombre / Correo electrónico<input name="id" required autocomplete="username"></label>
+      <label>Nombre / Correo electrónico<input name="user" required autocomplete="username"></label>
       <label>Contraseña<input name="pw" type="password" required autocomplete="current-password"></label>
       <p class="err" id="e-login" role="alert"></p>
       <button class="link" type="button" data-go="recuperar">¿Olvidaste tu contraseña?</button>
@@ -101,6 +101,6 @@
   <button data-go="perfil"><i>👤</i>Perfil</button>
 </nav>
 <div id="toast" role="status" aria-live="polite"></div>
-<script src="app.js"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
